@@ -16,11 +16,15 @@ export class SignUpController implements Controller {
 
             const { name, username, password } = httpRequest.body
             
-            await this.signUpUseCase.sign({
+            const hasError = await this.signUpUseCase.sign({
                 name,
                 username,
                 password
             })
+
+            if (hasError instanceof Error) {
+                return badRequest(hasError)
+            }
 
             return created()
         } catch (error) {
