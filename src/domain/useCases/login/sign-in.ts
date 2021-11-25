@@ -1,4 +1,4 @@
-import { SignInModel } from "../models/sign-in";
+import { SignInModel } from "../../models/login/sign-in";
 
 export interface SignInUseCase {
     sign: (signInModel: SignInModel) => Promise<string>
