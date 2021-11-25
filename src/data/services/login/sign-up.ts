@@ -6,8 +6,8 @@ import { LoginRepository } from "../../contracts/repositories/login-repository";
 export class SignUpService implements SignUpUseCase {
     constructor (private readonly loginRepository: LoginRepository, private readonly hasher: Hasher) {}
     async sign(signUpModel: SignUpModel): Promise<void | Error> {
-        const username = await this.loginRepository.getByUsername(signUpModel.username)
-        if (!username) {
+        const login = await this.loginRepository.getByUsername(signUpModel.username)
+        if (login) {
             return new Error('username already exist!')
         }
         const password = await this.hasher.hash(signUpModel.password)
