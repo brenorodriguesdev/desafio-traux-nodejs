@@ -1,4 +1,3 @@
-import { CreateProductUseCase } from "../../../domain/useCases/product/create-product";
 import { UpdateProductUseCase } from "../../../domain/useCases/product/update-product";
 import { Validator } from "../../../validation/contracts/validator";
 import { Controller } from "../../contracts/controller";
