@@ -26,7 +26,7 @@ export const noContent = (): HttpResponse => ({
     statusCode: 201
 })
 
-export const noFound = (): HttpResponse => ({
+export const notFound = (): HttpResponse => ({
     data: null,
     statusCode: 201
 })
