@@ -1,4 +1,3 @@
-import { SignInUseCase } from "../../../domain/useCases/login/sign-in";
 import { SignUpUseCase } from "../../../domain/useCases/login/sign-up";
 import { Validator } from "../../../validation/contracts/validator";
 import { Controller } from "../../contracts/controller";
