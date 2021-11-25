@@ -23,8 +23,14 @@ export const ok = (data: any): HttpResponse => ({
 
 export const noContent = (): HttpResponse => ({
     data: null,
+    statusCode: 204
+})
+
+export const created = (): HttpResponse => ({
+    data: null,
     statusCode: 201
 })
+
 
 export const notFound = (): HttpResponse => ({
     data: null,
