@@ -1,5 +1,6 @@
-import { SignUpModel } from "../models/sign-up";
+import { SignUpModel } from "../../models/login/sign-up";
+
 
 export interface SignUpUseCase {
-    sign: (signUpModel: SignUpModel) => Promise<void>
+    sign: (signUpModel: SignUpModel) => Promise<void | Error>
 }
