@@ -6,5 +6,8 @@
     "database": "traux",
     "entities": [
         "./src/data/entities/*.ts"
+    ],
+    "migrations": [
+        "./src/migrations/*.ts"
     ]
 }
