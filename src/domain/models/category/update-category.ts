@@ -1,5 +1,5 @@
 export interface UpdateCategoryModel {
     id: number
-    nome: string
+    name: string
     image: string
 }
