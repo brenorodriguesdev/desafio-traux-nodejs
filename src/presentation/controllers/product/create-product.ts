@@ -21,6 +21,10 @@ export class CreateProductController implements Controller {
                 image
             })
 
+            if (product instanceof Error) {
+                return badRequest(error)
+            }
+
             return ok(product)
         } catch (error) {
             return serverError()
