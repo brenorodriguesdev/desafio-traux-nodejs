@@ -1,9 +1,8 @@
-import { DeleteByIdProductUseCase } from "../../../domain/useCases/product/delete-by-id-product";
 import { GetByIdProductUseCase } from "../../../domain/useCases/product/get-by-id-product";
 import { Validator } from "../../../validation/contracts/validator";
 import { Controller } from "../../contracts/controller";
 import { HttpRequest, HttpResponse } from "../../contracts/http";
-import { badRequest, noContent, notFound, ok, serverError } from "../../contracts/http-helper";
+import { badRequest, notFound, ok, serverError } from "../../contracts/http-helper";
 
 export class GetByIdProductController implements Controller {
     constructor (private readonly validator: Validator, private readonly getByIdProductUseCase: GetByIdProductUseCase) {}
