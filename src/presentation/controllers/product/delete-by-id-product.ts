@@ -2,7 +2,7 @@ import { DeleteByIdProductUseCase } from "../../../domain/useCases/product/delet
 import { Validator } from "../../../validation/contracts/validator";
 import { Controller } from "../../contracts/controller";
 import { HttpRequest, HttpResponse } from "../../contracts/http";
-import { badRequest, noContent, noFound, ok, serverError } from "../../contracts/http-helper";
+import { badRequest, noContent, serverError } from "../../contracts/http-helper";
 
 export class DeleteByIdProductController implements Controller {
     constructor (private readonly validator: Validator, private readonly deleteByIdProductUseCase: DeleteByIdProductUseCase) {}
