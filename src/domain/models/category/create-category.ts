@@ -1,4 +1,4 @@
 export interface CreateCategoryModel {
-    nome: string
+    name: string
     image: string
 }

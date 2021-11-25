@@ -1,5 +1,5 @@
 export interface CategoryModel {
     id: number
-    nome: string
+    name: string
     image: string
 }
