@@ -1,0 +1,10 @@
+{
+    "type": "mysql",
+    "host": "localhost",
+    "username": "root",
+    "password": "1",
+    "database": "traux",
+    "entities": [
+        "./src/data/entities/*.ts"
+    ]
+}
