@@ -1,8 +1,5 @@
 export const signUpPath = {
     post: {
-      security: [{
-        bearerAuth: []
-      }],
       tags: ['Login'],
       summary: 'API para criar acesso',
       requestBody: {

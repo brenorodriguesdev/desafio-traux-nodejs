@@ -1,6 +1,8 @@
-import { signInPath, signUpPath } from "./paths/"
+import { categoryByIdPath, categoryPath, signInPath, signUpPath } from "./paths/"
 
 export default {
     '/signIn': signInPath,
     '/signUp': signUpPath,
+    '/category': categoryPath,
+    '/category/{id}': categoryByIdPath,
 }

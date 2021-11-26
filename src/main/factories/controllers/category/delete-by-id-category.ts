@@ -1,7 +1,7 @@
 import { DeleteByIdCategoryService } from "../../../../data/services/category/delete-by-id-category"
 import { CategoryRepositoryTypeORM } from "../../../../infra/repositories/category-repository-typeorm"
 import { Controller } from "../../../../presentation/contracts/controller"
-import { DeleteByIdCategoryController } from "../../../../presentation/controllers/category/delete-by-id-product"
+import { DeleteByIdCategoryController } from "../../../../presentation/controllers/category/delete-by-id-category"
 import { makeDeleteByIdCategoryValidator } from "../../validations/category/delete-by-id-category"
 
 export const makeDeleteByIdCategoryController = (): Controller => {

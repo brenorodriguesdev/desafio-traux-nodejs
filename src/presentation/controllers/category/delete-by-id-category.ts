@@ -14,12 +14,16 @@ export class DeleteByIdCategoryController implements Controller {
             }
 
             const { id } = httpRequest.params
+            console.log(id)
             
             const hasError = await this.deleteByIdCategoryUseCase.delete(id)
             
+            console.log(hasError)
+
             if (hasError instanceof Error) {
                 return badRequest(error)
             }
+
 
             return noContent()
         } catch (error) {

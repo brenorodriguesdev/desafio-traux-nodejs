@@ -1,8 +1,5 @@
 export const signInPath = {
     post: {
-      security: [{
-        bearerAuth: []
-      }],
       tags: ['Login'],
       summary: 'API para se autenticar',
       requestBody: {
