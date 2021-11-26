@@ -10,7 +10,7 @@ export const adaptRouter = (controller: Controller) => {
             params: req.params
         }
         const httpResponse = await controller.handle(httpRequest)
-        if (httpResponse.statusCode !== 200 && httpResponse.statusCode !== 201) {
+        if (httpResponse.statusCode !== 200 && httpResponse.statusCode !== 201 && httpResponse.statusCode !== 204) {
             res.status(httpResponse.statusCode).json({ message: httpResponse.data.message })
         } else {
             res.status(httpResponse.statusCode).json(httpResponse.data)
