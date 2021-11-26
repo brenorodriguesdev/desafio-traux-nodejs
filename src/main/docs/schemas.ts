@@ -1,13 +1,17 @@
 import {
   createCategoryParamsSchema,
-    signInParamsSchema,
-    signUpParamsSchema,
-    updateCategoryParamsSchema,
-  } from './schemas/'
-  
-  export default {
-    signUpParams: signUpParamsSchema,
-    signInParams: signInParamsSchema,
-    createCategoryParams: createCategoryParamsSchema,
-    updateCategoryParams: updateCategoryParamsSchema,
-  }
+  createProductParamsSchema,
+  signInParamsSchema,
+  signUpParamsSchema,
+  updateCategoryParamsSchema,
+  updateProductParamsSchema,
+} from './schemas/'
+
+export default {
+  signUpParams: signUpParamsSchema,
+  signInParams: signInParamsSchema,
+  createCategoryParams: createCategoryParamsSchema,
+  updateCategoryParams: updateCategoryParamsSchema,
+  createProductParams: createProductParamsSchema,
+  updateProductParams: updateProductParamsSchema,
+}
