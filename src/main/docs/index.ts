@@ -1,3 +1,6 @@
+import paths from './paths'
+import schemas from './schemas'
+
 export default {
   openapi: '3.0.0',
   info: {
@@ -18,5 +21,16 @@ export default {
   {
     name: 'Product',
     description: 'APIs de Produto',
-  }]
+  }],
+  paths,
+  schemas,
+  components: {
+    securitySchemes: {
+      bearerAuth: {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT'
+      }
+    }
+  }
 }

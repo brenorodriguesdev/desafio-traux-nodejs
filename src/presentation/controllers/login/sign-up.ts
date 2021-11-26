@@ -27,6 +27,7 @@ export class SignUpController implements Controller {
 
             return created()
         } catch (error) {
+            console.log(error.message)
             return serverError()
         }
     }
