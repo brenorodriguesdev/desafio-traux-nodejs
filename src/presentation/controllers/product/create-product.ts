@@ -21,8 +21,9 @@ export class CreateProductController implements Controller {
                 image
             })
 
+            
             if (product instanceof Error) {
-                return badRequest(error)
+                return badRequest(product)
             }
 
             return ok(product)
