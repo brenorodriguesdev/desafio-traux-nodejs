@@ -53,7 +53,8 @@ export class v11637909434019 implements MigrationInterface {
                 {
                     name: "id",
                     type: "int",
-                    isPrimary: true
+                    isPrimary: true,
+                    isGenerated: true
                 },
                 {
                     name: "name",
