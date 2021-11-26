@@ -20,6 +20,7 @@ export class ProductRepositoryTypeORM implements ProductRepository {
   
     async create (product: Product): Promise<Product> {
       const productRepository = getRepository(Product)
+      product.id = await productRepository.count() + 1
       return await productRepository.save(product)
     }
   

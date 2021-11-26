@@ -20,6 +20,7 @@ export class CategoryRepositoryTypeORM implements CategoryRepository {
   
     async create (category: Category): Promise<Category> {
       const categoryRepository = getRepository(Category)
+      category.id = await categoryRepository.count() + 1
       return await categoryRepository.save(category)
     }
   

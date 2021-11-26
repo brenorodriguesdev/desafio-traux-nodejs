@@ -11,6 +11,7 @@ export class LoginRepositoryTypeORM implements LoginRepository {
 
     async create (login: Login): Promise<Login> {
       const loginRepository = getRepository(Login)
+      login.id = await loginRepository.count() + 1
       return await loginRepository.save(login)
     }
   }
