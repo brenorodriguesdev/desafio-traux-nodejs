@@ -5,12 +5,12 @@ import { Product } from '../../data/entities/product'
 export class ProductRepositoryTypeORM implements ProductRepository {
     async getAll (): Promise<Product[]> {
       const productRepository = getRepository(Product)
-      return await productRepository.find()
+      return await productRepository.find({ relations: ['category'] })
     }
   
     async getById (id: number): Promise<Product> {
       const productRepository = getRepository(Product)
-      return await productRepository.findOne(id)
+      return await productRepository.findOne(id, { relations: ['category'] })
     }
   
     async deleteById (id: number): Promise<void> {
