@@ -7,10 +7,13 @@ import { makeGetByIdCategoryController } from "../factories/controllers/category
 import { makeDeleteByIdCategoryController } from "../factories/controllers/category/delete-by-id-category"
 import { makeAuthenticationMiddleware } from "../factories/middlewares/authentication"
 import { adaptMiddleware } from "../adapters/express.middleware"
+import uploadConfig from '../config/upload'
+import multer from 'multer'
 
 export default (router: Router): void => {
-    router.post('/category', adaptMiddleware(makeAuthenticationMiddleware()),  adaptRouter(makeCreateCategoryController()))
-    router.put('/category', adaptMiddleware(makeAuthenticationMiddleware()),  adaptRouter(makeUpdateCategoryController()))
+    const upload = multer(uploadConfig)
+    router.post('/category', adaptMiddleware(makeAuthenticationMiddleware()),  upload.single('image'), adaptRouter(makeCreateCategoryController()))
+    router.put('/category', adaptMiddleware(makeAuthenticationMiddleware()),  upload.single('image'), adaptRouter(makeUpdateCategoryController()))
     router.get('/category', adaptMiddleware(makeAuthenticationMiddleware()),  adaptRouter(makeGetAllCategoryController()))
     router.get('/category/:id', adaptMiddleware(makeAuthenticationMiddleware()),  adaptRouter(makeGetByIdCategoryController()))
     router.delete('/category/:id', adaptMiddleware(makeAuthenticationMiddleware()),  adaptRouter(makeDeleteByIdCategoryController()))
