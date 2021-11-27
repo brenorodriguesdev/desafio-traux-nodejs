@@ -8,7 +8,8 @@ export const createProductParamsSchema = {
             type: 'string'
         },
         image: {
-            type: 'string'
+            type: 'string',
+            format: 'binary'
         }
     },
     required: ['idCategory', 'name', 'image']

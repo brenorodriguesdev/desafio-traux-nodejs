@@ -8,7 +8,7 @@ export const productPath = {
       requestBody: {
         required: true,
         content: {
-          'application/json': {
+          'multipart/form-data': {
             schema: {
               $ref: '#/schemas/createProductParams'
             }
@@ -30,7 +30,7 @@ export const productPath = {
       requestBody: {
         required: true,
         content: {
-          'application/json': {
+          'multipart/form-data': {
             schema: {
               $ref: '#/schemas/updateProductParams'
             }

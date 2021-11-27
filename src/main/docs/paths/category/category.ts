@@ -8,7 +8,7 @@ export const categoryPath = {
       requestBody: {
         required: true,
         content: {
-          'application/json': {
+          'multipart/form-data': {
             schema: {
               $ref: '#/schemas/createCategoryParams'
             }
@@ -30,7 +30,7 @@ export const categoryPath = {
       requestBody: {
         required: true,
         content: {
-          'application/json': {
+          'multipart/form-data': {
             schema: {
               $ref: '#/schemas/updateCategoryParams'
             }

@@ -11,7 +11,8 @@ export const updateProductParamsSchema = {
             type: 'string'
         },
         image: {
-            type: 'string'
+            type: 'string',
+            format: 'binary'
         }
     },
     required: ['id', 'idCategory', 'name', 'image']

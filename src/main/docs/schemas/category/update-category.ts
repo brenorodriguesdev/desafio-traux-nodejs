@@ -8,7 +8,8 @@ export const updateCategoryParamsSchema = {
             type: 'string'
         },
         image: {
-            type: 'string'
+            type: 'string',
+            format: 'binary'
         }
     },
     required: ['id', 'name', 'image']
