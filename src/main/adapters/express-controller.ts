@@ -7,7 +7,8 @@ export const adaptRouter = (controller: Controller) => {
         const httpRequest: HttpRequest = {
             body: req.body,
             query: req.query,
-            params: req.params
+            params: req.params,
+            file: req.file
         }
         const httpResponse = await controller.handle(httpRequest)
         if (httpResponse.statusCode !== 200 && httpResponse.statusCode !== 201 && httpResponse.statusCode !== 204) {
