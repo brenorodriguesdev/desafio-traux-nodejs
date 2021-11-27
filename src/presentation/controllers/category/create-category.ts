@@ -8,12 +8,15 @@ export class CreateCategoryController implements Controller {
     constructor (private readonly validator: Validator, private readonly createCategoryUseCase: CreateCategoryUseCase) {}
     async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
         try {
+            const image = httpRequest.file ? httpRequest.file.filename : ''
+            httpRequest.body.image = image
+            
             const error = this.validator.validate(httpRequest.body)
             if (error) {
                 return badRequest(error)
             }
 
-            const { name, image } = httpRequest.body
+            const { name } = httpRequest.body
             
             const product = await this.createCategoryUseCase.create({
                 name,

@@ -8,12 +8,15 @@ export class CreateProductController implements Controller {
     constructor (private readonly validator: Validator, private readonly createProductUseCase: CreateProductUseCase) {}
     async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
         try {
+            const image = httpRequest.file ? httpRequest.file.filename : ''
+            httpRequest.body.image = image
+
             const error = this.validator.validate(httpRequest.body)
             if (error) {
                 return badRequest(error)
             }
 
-            const { idCategory, name, image } = httpRequest.body
+            const { idCategory, name } = httpRequest.body
             
             const product = await this.createProductUseCase.create({
                 idCategory,

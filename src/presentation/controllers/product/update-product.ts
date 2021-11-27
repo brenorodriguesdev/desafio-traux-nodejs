@@ -8,12 +8,15 @@ export class UpdateProductController implements Controller {
     constructor (private readonly validator: Validator, private readonly updateProductUseCase: UpdateProductUseCase) {}
     async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
         try {
+            const image = httpRequest.file ? httpRequest.file.filename : ''
+            httpRequest.body.image = image
+
             const error = this.validator.validate(httpRequest.body)
             if (error) {
                 return badRequest(error)
             }
 
-            const { id, idCategory, name, image } = httpRequest.body
+            const { id, idCategory, name } = httpRequest.body
             
             const hasError = await this.updateProductUseCase.update({
                 id,

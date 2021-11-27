@@ -8,12 +8,15 @@ export class UpdateCategoryController implements Controller {
     constructor (private readonly validator: Validator, private readonly updateCategoryUseCase: UpdateCategoryUseCase) {}
     async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
         try {
+            const image = httpRequest.file ? httpRequest.file.filename : ''
+            httpRequest.body.image = image
+
             const error = this.validator.validate(httpRequest.body)
             if (error) {
                 return badRequest(error)
             }
 
-            const { id, name, image } = httpRequest.body
+            const { id, name } = httpRequest.body
             
             const hasError = await this.updateCategoryUseCase.update({
                 id,
