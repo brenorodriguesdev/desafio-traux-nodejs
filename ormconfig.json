@@ -1,16 +1,16 @@
 {
     "type": "mysql",
-    "host": "localhost",
-    "username": "root",
-    "password": "1",
-    "database": "traux",
+    "host": "us-cdbr-east-04.cleardb.com",
+    "username": "bef59afa0491e2",
+    "password": "b64604ea",
+    "database": "heroku_8ab6b03f4960242",
     "entities": [
-        "./src/data/entities/*.ts"
+        "./dist/data/entities/*.js"
     ],
     "migrations": [
-        "./src/migrations/*.ts"
+        "./dist/migrations/*.js"
     ],
     "cli": {
-        "migrationsDir": "./src/migrations"
+        "migrationsDir": "./dist/migrations"
     }
 }
