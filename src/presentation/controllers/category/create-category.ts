@@ -10,7 +10,7 @@ export class CreateCategoryController implements Controller {
         try {
             const image = httpRequest.file ? httpRequest.file.filename : ''
             httpRequest.body.image = image
-            
+
             const error = this.validator.validate(httpRequest.body)
             if (error) {
                 return badRequest(error)

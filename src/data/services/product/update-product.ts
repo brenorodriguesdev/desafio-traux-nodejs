@@ -11,6 +11,15 @@ export class UpdateProductService implements UpdateProductUseCase {
             return new Error('category not found')
         }
         
+        const product = await this.categoryRepository.getById(data.id)
+        if (!product) {
+            return new Error('product not found')
+        }
+        
+        if (!data.image) {
+            data.image = product.image
+        }
+        
         await this.productRepository.update({
             id: data.id,
             category,

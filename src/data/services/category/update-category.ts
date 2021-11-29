@@ -9,6 +9,9 @@ export class UpdateCategoryService implements UpdateCategoryUseCase {
         if (!category) {
             return new Error('category not found')
         }
+        if (!data.image) {
+            data.image = category.image
+        }
         await this.categoryRepository.update(data)
     }
 }
